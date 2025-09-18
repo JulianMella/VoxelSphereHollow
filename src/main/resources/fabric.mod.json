@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "voxel-sphere-hollow",
+	"version": "${version}",
+	"name": "Voxel Sphere Hollow",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/voxel-sphere-hollow/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"julianmella.voxelspherehollow.VoxelSphereHollow"
+		],
+		"client": [
+			"julianmella.voxelspherehollow.VoxelSphereHollowClient"
+		],
+		"fabric-datagen": [
+			"julianmella.voxelspherehollow.VoxelSphereHollowDataGenerator"
+		]
+	},
+	"mixins": [
+		"voxel-sphere-hollow.mixins.json",
+		{
+			"config": "voxel-sphere-hollow.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
