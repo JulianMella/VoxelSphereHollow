@@ -44,7 +44,7 @@ public class ParserBlock extends Block {
             if (item == net.minecraft.item.Items.DIAMOND_AXE) {
                 radius = 100;
             }
-
+            int counter = 0;
             if (item == net.minecraft.item.Items.DIAMOND_PICKAXE) {
                 StringBuilder sb = new StringBuilder();
                 for (int dx = -radius; dx <= radius; dx++) {
@@ -60,16 +60,17 @@ public class ParserBlock extends Block {
 
                             // Example: Only register stone blocks
                             if (block == net.minecraft.block.Blocks.STONE) {
-                                sb.append(block.getName().getString())
-                                        .append(" at ")
-                                        .append(normX).append(" ")
-                                        .append(normY).append(" ")
-                                        .append(normZ)
-                                        .append("\n");
+                                counter++;
+                                sb.append(normX).append(" ")
+                                .append(normY).append(" ")
+                                .append(normZ)
+                                .append("\n");
                             }
                         }
                     }
                 }
+
+                player.sendMessage(net.minecraft.text.Text.of("Blocks counted: " + counter), false);
                 String pathname = "/Users/julianmella/Tensor Builder/Assets/SphereCoordinates/Sphere" + radius + ".txt"; // Change this to your desired path
                 java.io.File file = new java.io.File(pathname);
                 try (java.io.FileWriter writer = new java.io.FileWriter(file)) {
