@@ -47,9 +47,9 @@ public class ParserBlock extends Block {
 
             if (item == net.minecraft.item.Items.DIAMOND_PICKAXE) {
                 StringBuilder sb = new StringBuilder();
-                for (int dx = -1; dx <= 1; dx++) {
-                    for (int dy = -1; dy <= 1; dy++) {
-                        for (int dz = -1; dz <= 1; dz++) {
+                for (int dx = -radius; dx <= radius; dx++) {
+                    for (int dy = -radius; dy <= radius; dy++) {
+                        for (int dz = -radius; dz <= radius; dz++) {
                             if (dx == 0 && dy == 0 && dz == 0) continue; // skip center
                             BlockPos checkPos = pos.add(dx, dy, dz);
                             BlockState checkState = world.getBlockState(checkPos);
@@ -60,7 +60,7 @@ public class ParserBlock extends Block {
                         }
                     }
                 }
-                String pathname = "seturpathnamehere" + radius + ".txt"; // Change this to your desired path
+                String pathname = "/Users/julianmella/Tensor Builder/Assets/SphereCoordinates/Sphere" + radius + ".txt"; // Change this to your desired path
                 java.io.File file = new java.io.File(pathname);
                 try (java.io.FileWriter writer = new java.io.FileWriter(file)) {
                     writer.write(sb.toString());
