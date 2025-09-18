@@ -3,13 +3,12 @@
 	"id": "voxel-sphere-hollow",
 	"version": "${version}",
 	"name": "Voxel Sphere Hollow",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Block that exports the coordinates of all the blocks in a hollow voxel sphere to a readable format",
 	"authors": [
 		"Me!"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/JulianMella/VoxelSphereHollow"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/voxel-sphere-hollow/icon.png",

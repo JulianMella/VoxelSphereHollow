@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "voxel-sphere-hollow:block/dev_block"
+    }
+  }
+}

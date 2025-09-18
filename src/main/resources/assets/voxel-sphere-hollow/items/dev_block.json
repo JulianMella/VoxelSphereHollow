@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "voxel-sphere-hollow:block/dev_block"
+  }
+}

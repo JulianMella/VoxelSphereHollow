@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "north": "voxel-sphere-hollow:block/device_computer_front_on",
+    "south": "voxel-sphere-hollow:block/device_computer_side",
+    "east": "voxel-sphere-hollow:block/device_computer_side",
+    "west": "voxel-sphere-hollow:block/device_computer_side",
+    "up": "voxel-sphere-hollow:block/device_computer_side",
+    "down": "voxel-sphere-hollow:block/device_computer_side"
+  }
+}
