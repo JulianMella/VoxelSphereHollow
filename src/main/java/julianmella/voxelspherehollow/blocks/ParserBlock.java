@@ -54,8 +54,18 @@ public class ParserBlock extends Block {
                             BlockPos checkPos = pos.add(dx, dy, dz);
                             BlockState checkState = world.getBlockState(checkPos);
                             Block block = checkState.getBlock();
+                            int normX = checkPos.getX() - pos.getX();
+                            int normY = checkPos.getY() - pos.getY();
+                            int normZ = checkPos.getZ() - pos.getZ();
+
+                            // Example: Only register stone blocks
                             if (block == net.minecraft.block.Blocks.STONE) {
-                                sb.append(checkPos.getX()).append(" ").append(checkPos.getY()).append(" ").append(checkPos.getZ()).append("\n");
+                                sb.append(block.getName().getString())
+                                        .append(" at ")
+                                        .append(normX).append(" ")
+                                        .append(normY).append(" ")
+                                        .append(normZ)
+                                        .append("\n");
                             }
                         }
                     }
@@ -66,6 +76,23 @@ public class ParserBlock extends Block {
                     writer.write(sb.toString());
                 } catch (Exception e) {
                     e.printStackTrace();
+                }
+            }
+
+            if (item == net.minecraft.item.Items.NETHERITE_PICKAXE) {
+                for (int dx = -radius; dx <= radius; dx++) {
+                    for (int dy = -radius; dy <= radius; dy++) {
+                        for (int dz = -radius; dz <= radius; dz++) {
+                            if (dx == 0 && dy == 0 && dz == 0) continue;
+                            BlockPos checkPos = pos.add(dx, dy, dz);
+                            BlockState checkState = world.getBlockState(checkPos);
+                            Block block = checkState.getBlock();
+
+                            if (block == net.minecraft.block.Blocks.STONE) {
+                                world.setBlockState(checkPos, net.minecraft.block.Blocks.DIAMOND_BLOCK.getDefaultState());
+                            }
+                        }
+                    }
                 }
             }
         }
