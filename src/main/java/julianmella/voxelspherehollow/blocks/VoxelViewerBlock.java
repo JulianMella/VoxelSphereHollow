@@ -1,5 +1,6 @@
 package julianmella.voxelspherehollow.blocks;
 
+import julianmella.voxelspherehollow.blocks.ParserBlock;
 import julianmella.voxelspherehollow.VoxelSphereHollow;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
@@ -18,12 +19,12 @@ import java.util.function.Function;
 
 public class VoxelViewerBlock {
 
-        public static final Block PARSER_BLOCK = register(
-                "dev_block",
-                Block::new,
-                AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE),
-                true
-        );
+    public static final Block PARSER_BLOCK = register(
+            "dev_block",
+            ParserBlock::new, // Use your custom block class here
+            AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE),
+            true
+    );
 
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register((itemGroup) -> {
